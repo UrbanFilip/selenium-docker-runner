@@ -2,8 +2,6 @@ version: "3"
 services:
   hub:
     image: selenium/hub:4.10
-    ports:
-    - 4444:4444
   chrome:
     image: selenium/node-chrome:4.10
     shm_size: '2g'
@@ -27,7 +25,7 @@ services:
     - SE_NODE_OVERRIDE_MAX_SESSIONS=true
     - SE_NODE_MAX_SESSIONS=4
   vendor-portal:
-    image: simba/selenium
+    image: simba195/selenium
     depends_on:
       - chrome
     environment:
@@ -38,7 +36,7 @@ services:
     volumes:
       - C:/Users/benny/workspace/05-dockerize/grid-and-test-suites/output-vendor-portal:/home/selenium-docker/test-output
   flight-reservation:
-    image: simba/selenium
+    image: simba195/selenium
     depends_on:
       - firefox
     environment:
