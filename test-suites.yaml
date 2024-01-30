@@ -8,7 +8,7 @@ services:
     - THREAD_COUNT=4
     - TEST_SUITE=vendor-portal.xml
     volumes:
-      - C:/Users/benny/workspace/05-dockerize/grid-and-test-suites/output-vendor-portal:/home/selenium-docker/test-output
+      - ./output/vendor-portal:/home/selenium-docker/test-output
   flight-reservation:
     image: simba195/selenium
     environment:
@@ -17,4 +17,4 @@ services:
     - THREAD_COUNT=4
     - TEST_SUITE=flight-reservation.xml
     volumes:
-      - C:/Users/benny/workspace/05-dockerize/grid-and-test-suites/output-flight-reservation:/home/selenium-docker/test-output
+      - ./output/flight-reservation:/home/selenium-docker/test-output
