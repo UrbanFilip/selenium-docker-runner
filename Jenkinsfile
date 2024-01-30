@@ -16,6 +16,11 @@ pipeline {
       stage('Run Test') {
         steps{
           bat "docker-compose -f test-suites.yaml up"
+          script {
+            if(fileExists('output/file-reservation/testng-failed.xml') || fileExists('output/file-reservation/testng-failed.xml')) {
+              error('failed tests found')
+            }
+          }
         }
       }
   }
